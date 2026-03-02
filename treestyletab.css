@@ -1,0 +1,62 @@
+/* 1. Global Variables */
+:root {
+  --tab-height: 24px !important;
+  --tab-font-size: 14px;
+  --indent-width: 14px; /* Width of each nesting level */
+}
+
+/* 2. Layout & Height Fixes */
+tab-item {
+  height: var(--tab-height) !important;
+  max-height: var(--tab-height) !important;
+}
+
+tab-item .stack {
+  height: var(--tab-height) !important;
+}
+
+tab-item-substance {
+  height: var(--tab-height) !important;
+  padding: 0 !important;
+  /* margin: 0 !important; <— Removed to allow indentation */
+}
+
+/* 3. Restore Indentation (The "Tree" part) */
+.tab .indent {
+  display: block !important;
+  width: var(--indent-width) !important;
+  flex-shrink: 0;
+}
+
+/* 4. Icon & Text Alignment */
+tab-item .favicon,
+tab-item .counter {
+  width: 16px !important;
+  height: 16px !important;
+  /* Centering the icon vertically within the 30px row */
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+tab-item .label {
+  font-size: var(--tab-font-size) !important;
+  line-height: var(--tab-height) !important;
+  display: flex;
+  align-items: center;
+}
+
+/* 5. Clean up the Twistie (Collapse/Expand Arrow) */
+.twisty {
+  padding: 0 !important;
+  margin: 0 4px 0 0 !important;
+  width: 12px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 6. Optional: Visual Guide Lines */
+/* Adds a subtle vertical line to show the relationship between parent/child */
+.tab.child .indent {
+  box-shadow: -1px 0 0 0 rgba(255, 255, 255, 0.1) inset;
+}
