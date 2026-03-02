@@ -1,0 +1,20 @@
+/* Hide main tabs toolbar */
+#main-window[tabsintitlebar="true"]:not([extradragspace="true"]) #TabsToolbar > .toolbar-items {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#main-window:not([tabsintitlebar="true"]) #TabsToolbar {
+    visibility: collapse !important;
+}
+
+/* I don't really know what this does. */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
+
+/* Remove the sidebar's minimum width restriction */
+#sidebar-box {
+  min-width: 0px !important;
+  max-width: none !important;
+}
